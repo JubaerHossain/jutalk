@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+
+        <script async defer data-website-id="a378bd09-212d-4801-94cc-9797b6a5f3f7" src="../js//common.js"></script>
+
+        <!-- Title and Icon -->
+
+        <title>JuTalk Video Call</title>
+
+        <!-- Meta Information -->
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta
+            name="description"
+            content="JuTalk powered by WebRTC, Real-time video calls, chat and screen sharing capabilities in the browser, from your mobile or desktop."
+        />
+
+        <!-- https://ogp.me -->
+
+        <meta property="og:type" content="app-webrtc" />
+        <meta property="og:site_name" content="JuTalk" />
+
+        <!-- StyleSheet -->
+
+        <link rel="stylesheet" href="../css/landing.css" />
+    </head>
+    <body class="has-animations">
+        <div class="body-wrap">
+            <main class="site-content">
+                <section class="cta section center-content-mobile reveal-from-bottom mt-50">
+                    <div class="container">
+                        <div class="cta-inner section-inner cta-split">
+                            <div class="cta-slogan">
+                                <h3 class="m-0">
+                                    Room name
+                                </h3>
+                            </div>
+                            <div class="cta-action">
+                                <div class="mb-24">
+                                    <label class="form-label screen-reader" for="roomName">jUtalk</label>
+                                    <div class="form-group-desktop">
+                                        <input class="form-input" type="text" id="roomName" value="jUtalk" />
+                                        <button
+                                            id="joinRoomButton"
+                                            class="button button-primary pulse"
+                                            onclick="joinRoom()"
+                                        >
+                                            Join Room
+                                        </button>
+                                        <script>
+                                            document.getElementById('roomName').onkeyup = (e) => {
+                                                if (e.keyCode === 13) {
+                                                    e.preventDefault();
+                                                    joinRoom();
+                                                }
+                                            };
+                                            function joinRoom() {
+                                                let roomName = document.getElementById('roomName').value;
+                                                window.location.href = '/join/' + roomName;
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <script defer src="../js/landing.js"></script>
+        <script defer src="../js/newRoom.js"></script>
+    </body>
+</html>
